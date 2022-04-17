@@ -17,7 +17,7 @@ class TerminalMod(loader.Module):
     """Jarayon buyruqlari"""
 
     strings = {
-        "name": "Terminal #umodules",
+        "name": "Terminal",
         "flood_wait_protect_cfg_doc": "How long to wait in seconds between edits in commands",
         "what_to_kill": "<b>Reply to a terminal command to terminate it</b>",
         "kill_fail": "<b>Could not kill process</b>",
