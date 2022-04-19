@@ -7,16 +7,16 @@ logger = logging.getLogger(__name__)
 
 @loader.tds
 class PurgeMod(loader.Module):
-    """Модуль удаления сообщений"""
-    strings = {"name": "Ластик",
-               "from_where": "<b>📖 Какой интервал сообщений следует удалить?</b>",
-               "not_supergroup_bot": "<b>📖 Эта команда работает только с супергруппами. </b> ",
-               "delete_what": "<b>📖 Какое сообщение следует удалить?</b>"}
+    """Xabarni o'chirish moduli"""
+    strings = {"name": "Oʻchirgich",
+               "from_where": "<b>📖 Qaysi xabarlar oralig'ini o'chirish kerak?</b>",
+               "not_supergroup_bot": "<b>📖 Bu buyruq faqat superguruhlar bilan ishlaydi. </b> ",
+               "delete_what": "<b>📖 Qaysi xabarni o'chirish kerak?</b>"}
 
     @loader.group_admin_delete_messages
     @loader.ratelimit
-    async def пургcmd(self, message):
-        """удалять интервальные сообщения"""
+    async def purgecmd(self, message):
+        """intervalli xabarlarni o'chirish"""
         if not message.is_reply:
             await utils.answer(message, self.strings("from_where", message))
             return
@@ -63,8 +63,8 @@ class PurgeMod(loader.Module):
 
     @loader.group_admin_delete_messages
     @loader.ratelimit
-    async def делcmd(self, message):
-        """Удалить отображаемое сообщение"""
+    async def delcmd(self, message):
+        """Ko'rsatilgan xabarni o'chiring"""
         msgs = [message.id]
         if not message.is_reply:
             if await message.client.is_bot():
